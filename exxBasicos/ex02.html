@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+</head>
+<style>
+     @import
+     url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Black+Ops+One&family=Bungee+Shade&family=Gloria+Hallelujah&family=Henny+Penny&family=Monoton&family=Press+Start+2P&family=Rye&family=Sacramento&family=Sansita+Swashed:wght@300;400;500;600;700;800;900&display=swap');
+
+    body {
+        background-color: rgba(99, 26, 26, 0.582);
+        font-size: 25px;
+        text-align: center;
+        font-family: 'Rye', cursive;
+        color: rgb(177, 29, 132);
+            }
+    .frase {
+        margin: 15px;
+    }
+    .frase:hover {
+        color: black;
+
+    }
+</style>
+<body>
+
+
+    <script>
+        var nome = window.prompt('Qual é seu nome?')
+        var salario = Number(window.prompt('Qual o seu salário? '))
+        document.write(`<p class="frase">Olá, ${nome}!! <br></p>`)
+        document.write(`<p class="frase">Seu nome tem ${nome.length} letras! <br></p> `)
+        document.write(`<p class="frase">Seu nome em letras Maiúsculas ${nome.toUpperCase()} <br></p>`)
+        document.write(` <p class="frase">Seu nome em letras minúsculas é ${nome.toLowerCase()} <br></p>`)
+        document.write(` <p class="frase">Seu salario é ${salario.toFixed(2)} <br></p>`)
+
+        document.write(` <p class="frase">Seu salário é ${salario.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} <br></p>`)
+        document.write(` <p class="frase">Seu salário é ${salario.toLocaleString('pt-br', {style: 'currency', currency: 'USD'})} <br></p>`)
+        document.write(` <p class="frase">Seu salário é ${salario.toLocaleString('pt-br', {style: 'currency', currency: 'EUR'})} <br></p>`)
+
+
+
+        // ${salario.toFixed(2).replace('.' , ',')   Troxa o 'PONTO' pelo sinal de 'VIRGULA'
+        // ${salario.toFixed(2)}                     Fixa dois números após a virgula
+        // ${nome.toUpperCase()}                     Coloca a variavel nome em letras minúsculas
+        // ${nome.length}                            Mostra numero de letras da variavel nome
+        // document.write()                          Mostrar na tela
+    </script>
+</body>
+</html>

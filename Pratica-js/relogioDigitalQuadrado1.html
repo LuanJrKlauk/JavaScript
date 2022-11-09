@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio digital-Quadrado</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+        :root {
+            --cor01: #0B2B40;
+            --cor02: #30A5BF;
+            --cor03: #185359;
+            --cor04: #F2BE22;
+            --cor05: #A6874E;
+
+        }
+
+        body {
+            background-color: white;
+            color: black;
+            font-weight: bolder;
+            font-family: 'Bangers', cursive;
+
+
+        }
+
+        #fundo {
+            border: 1px solid black;
+            height: 300px;
+            width: 500px;
+            border-radius: 20px;
+            background-color: black;
+
+
+
+        }
+
+        #relogio {
+            border: 1px solid black;
+            height: 250px;
+            width: 450px;
+            margin: 23px;
+            border-radius: 20px;
+            display: inline-block;
+            background-color: white;
+            box-shadow: inset -2px 0px 41px -4px #000;
+
+        }
+
+        #dia {
+
+
+            margin-top: 10px;
+            margin-left: 10px;
+            font-size: 20px;
+            color: #A6874E;
+            text-shadow: 0px 5px 5px black;
+
+        }
+
+        #hora {
+
+            margin-top: 65px;
+            height: 100px;
+            width: 100px;
+            margin-left: 100px;
+            font-size: 70px;
+            color: #0B2B40;
+            text-shadow: 0px 5px 5px black;
+        }
+
+        #min {
+            margin-top: 65px;
+            height: 100px;
+            width: 100px;
+            margin-left: 5px;
+            font-size: 70px;
+            color: #0B2B40;
+            text-shadow: 0px 5px 5px black;
+        }
+
+        #seg {
+             margin-top: 65px;
+             height: 100px;
+             width: 100px;
+             margin-left: 5px;
+             font-size: 70px;
+             color: #0B2B40;
+             text-shadow: 0px 5px 5px black;
+        }
+
+        #horario {
+            display: flex;
+            width: 330px;
+        }
+
+        .separador {
+            margin-top: 70px;
+            font-size: 45px;
+            margin-left: 10px;
+            margin-right: 10px;
+            color: #0B2B40;
+            text-shadow: 0px 5px 5px black;
+        }
+
+        #aste {
+            border: 1px solid black;
+            height: 350px;
+            width: 45px;
+            background-color: black;
+            box-shadow: 0px 15px 5px rgba(0, 0, 0, 0.466);
+            margin: -2px;
+
+        }
+
+        #msg {
+            margin-top: 10px;
+            margin-left: 10px;
+            font-size: 35px;
+            color: #A6874E;
+            text-shadow: 0px 5px 5px black;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+        <div id="fundo">
+            <div id="relogio">
+                <div id="dia">
+                </div>
+                <div id="horario">
+                    <div id="hora">
+                    </div>
+                    <p class="separador">:</p>
+                    <div id="min">
+                    </div>
+                    <p class="separador">:</p>
+                    <div id="seg">
+                    </div>
+
+                </div>
+                <div id="msg">
+
+                </div>
+
+            </div>
+        </div>
+     
+
+    <script>
+        var mostrarDia = window.document.getElementById('dia')
+        var mostrarHora = window.document.getElementById('hora')
+        var mostrarMinuto = window.document.getElementById('min')
+        var mostrarSeg = window.document.getElementById('seg')
+        var mensagem = window.document.getElementById('msg')
+
+        atualizarTela()
+
+        setInterval(() => {
+            atualizarTela()
+        }, 1000);
+
+        function atualizarTela() {
+            var agora = new Date()
+            var diaSem = agora.getDay()
+            var hora = agora.getHours()
+            var minutos = agora.getMinutes()
+            var segundos = agora.getSeconds()
+
+            adicionarDiaSemana(diaSem)
+            adicionarHora(hora)
+            adicionarMinutos(minutos)
+            adicionarSegundos(segundos)
+            adicionarMsg(hora)
+        }
+
+        function adicionarDiaSemana(diaSem) {
+
+            switch (diaSem) {
+
+                case 0:
+                    mostrarDia.innerText = (`Domingo`)
+                    break
+                case 1:
+                    mostrarDia.innerText = (`Segunda-Feira`)
+                    break
+                case 2:
+                    mostrarDia.innerText = (`Terça-Feira`)
+                    break
+                case 3:
+                    mostrarDia.innerText = (`Quarta-Feira`)
+                    break
+                case 4:
+                    mostrarDia.innerText = ('Quinta-Feira')
+                    break
+                case 5:
+                    mostrarDia.innerText = (`Sexta-feira`)
+                    break
+                case 6:
+                    mostrarDia.innerText = (`Sabádo`)
+
+            }
+        }
+
+        function adicionarHora(hora) {
+            if (hora <= 9) {
+                mostrarHora.innerText = `0` + hora
+            }
+
+            mostrarHora.innerText = hora
+        }
+
+        function adicionarMinutos(minutos) {
+            if (minutos <= 9) {
+                mostrarMinuto.innerText = `0${minutos}`
+            } else if (minutos >= 10) {
+                mostrarMinuto.innerText = minutos
+            }
+        }
+
+        function adicionarSegundos(segundos) {
+            if (segundos <= 9) {
+                mostrarSeg.innerText = `0${segundos}`
+            } else if (segundos >= 10) {
+                mostrarSeg.innerText = segundos
+            }
+
+
+
+        }
+
+        function adicionarMsg(hora) {
+
+            if (hora >= 0 && hora <= 4) {
+                mensagem.innerHTML = `Boa-madrugada`
+            } else if (hora >= 5 && hora < 12) {
+                mensagem.innerHTML = `Bom dia `
+            } else if (hora >= 12 && hora < 18) {
+                mensagem.innerHTML = `Boa-Tarde`
+            } else {
+                mensagem.innerHTML = `Boa-noite`
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM parte 02</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barrio&display=swap');
+        :root {
+        --cor01:#520120;
+        --cor01:#08403E;
+        --cor01:#706513;
+        --cor01:#B57114;
+        --cor01:#962B09;
+        }
+        input {
+            height: 60px;
+            font-size: 30px;
+            text-align: center;
+            border-radius: 15px;
+            background-color: #520120;
+            color: white;
+            font-weight: bolder;
+            box-shadow: 0px 10px 10px black;
+            border: 1px solid black;
+        }
+        body {
+            font-family: 'Barrio', cursive;
+            text-align: center;
+            background-color: #08403ea4;
+            text-shadow: 0px 5px 5px black ;
+        }
+        #somar{
+           margin: 20px;
+        }
+        #resultado {
+
+            height: 30px;
+              padding: 20px;
+
+              max-width: 300px;
+              font-size: 50px;
+
+        }
+        p {
+            padding: 20px;
+
+            max-width: 300px;
+        }
+        #somar {
+            width: 150px;
+             height: 75px;
+             font-size: 30px;
+             text-align: center;
+             border-radius: 15px;
+             background-color: #520120;
+             color: white;
+             font-weight: bolder;
+             margin: 30px;
+        }
+        .sinal {
+                font-size: 50px;
+        }
+        #resultadoFinal {
+        }
+        #aguarde {
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>somando numeros de caixa de imput.</h1>
+<div id="corpo">
+
+        <input type="number" name="num1" id="num1">
+        <center>
+            <p class="sinal">+</p>
+        </center>
+        <input type="number" name="num2" id="num2"> <br>
+
+        <input id="somar" type="button" value="somar" onclick="somar()">
+
+        <center>
+            <div id="aguarde">
+                Aguardando operação...
+            </div>
+            <div id="resultado">
+
+
+            </div>
+        </center>
+</div>
+
+    <script>
+        function somar() {
+            var aguarde = window.document.getElementById('aguarde')
+            var tn1 = window.document.getElementById('num1')
+            var tn2 = window.document.getElementById('num2')
+            var num1 = Number(tn1.value)
+            var num2 = Number(tn2.value)
+            var res = num1 + num2
+            var resultado = window.document.getElementById('resultado')
+            aguarde.innerHTML = `O resultado é:`
+
+            resultado.innerHTML = `<p id="resultadoFinal">${res}</p>`
+
+
+        }
+    </script>
+
+</body>
+</html>

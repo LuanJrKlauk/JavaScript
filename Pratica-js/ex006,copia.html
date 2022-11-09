@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Black+Ops+One&family=Bungee+Shade&family=Diplomata+SC&family=Gloria+Hallelujah&family=Henny+Penny&family=Lily+Script+One&family=Monoton&family=Press+Start+2P&family=Rye&family=Sacramento&family=Sansita+Swashed:wght@300;400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Diplomata SC', cursive;
+            ;
+        }
+
+        div#div1 {
+
+            margin-left: 50px;
+            margin-top: 50px;
+            width: 400px;
+            height: 400px;
+            background-color: rgba(137, 43, 226, 0.548);
+            font-size: 30px;
+            line-height: 200px;
+            text-align: center;
+            color: black;
+            border: 2px solid black;
+        }
+
+        p {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="div1" >
+        <p>interaja....</p>
+    </div>
+    <script>
+        var div1 = window.document.getElementById('div1')
+        div1.addEventListener('click', clicar)
+        div1.addEventListener('mousemove', mover)
+        div1.addEventListener('mousedown', down)
+        div1.addEventListener('mouseup', up)
+        div1.addEventListener('mouseenter', entrar)
+        div1.addEventListener('mouseout', saiu )
+
+        function entrar() {
+
+            div1.innerHTML = `Entrou...`
+            div1.style.backgroundColor = 'pink'
+        }
+
+        function mover() {
+
+            div1.innerHTML = `Movendo...`
+            div1.style.backgroundColor = 'grey'
+
+        }
+
+        function down() {
+
+            div1.innerHTML = `down`
+            style.backgroundColor = 'orange'
+
+        }
+
+        function up() {
+
+            console.log('subindo')
+
+            div1.innerHTML = `Up...`
+            div1.style.backgroundColor = 'blue'
+        }
+
+        function clicar() {
+
+            div1.innerHTML = `Clicou...`
+            div1.style.borderRadius = '500px'
+            div1.style.backgroundColor = 'orange'
+        }
+
+
+        function saiu() {
+
+            div1.innerHTML = `Saiu...`
+            div1.style.backgroundColor = 'blue'
+
+        }
+
+        // EVENTOS DOM
+        // onmouseenter ( Ação que acontecerá quando mouse estiver encima do elemento).
+        // onmousemove ( Enquanto o mouse estiver se movendo dentro do elemento ele vai disparar o evento  )
+        // onmousedown (quando voce precionar o mouse)
+        // onmouseup (quando eu soltar o botão do mouse)
+        // onclick ( quando eu clicar e soltar rapidamente )
+        // mouseout (quando eu tirar o mouse de cima do elemento)
+    </script>
+</body>
+
+</html>

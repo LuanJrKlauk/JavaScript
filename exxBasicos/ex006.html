@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barrio&display=swap');
+        :root {
+            --cor01:#520120;
+            --cor01:#08403E;
+            --cor01:#706513;
+            --cor01:#B57114;
+            --cor01:#962B09;
+        }
+
+
+        body {
+            font-family: 'Barrio', cursive;
+            background-color: #520120b6;
+        }
+        #div1:hover {
+                background-color: aqua;
+        }
+        div#div1 {
+
+
+            margin-top: 300px;
+            width: 400px;
+            height: 400px;
+            background-color: #520120;
+            font-size: 50px;
+            line-height: 200px;
+            text-align: center;
+            color: white;
+            border-radius: 20px;
+            border: 2px solid #520120;
+            box-shadow: 0px 10px 50px black;
+        }
+
+        p {
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <center>
+        <div id="div1"
+        onmouseenter="entrar()"
+        onmousemove="mover()"
+        onmousedown="down()"
+        onmouseup="up()"
+        onclick="clicar()"
+        onmouseout="saiu()"
+          >
+             <p>Passe o mouse!</p>
+
+        </div>
+    </center>
+<script>
+    function entrar() {
+    var div1 = window.document.getElementById('div1')
+    div1.innerHTML = `clique!`
+    div1.style.backgroundColor = '#08403E'
+    div1.style.borderRadius = '400px'
+    }
+    /*function mover() {
+    var div1 = window.document.getElementById('div1')
+    div1.innerHTML = `Movendo...`
+    div1.style.backgroundColor = 'grey'
+    div1.style.borderRadius = '120px'
+
+    }*/
+    function down() {
+        var div1 = window.document.getElementById('div1')
+        div1.innerHTML = `Solte`
+        div1.style.backgroundColor = '#706513'
+        div1.style.borderRadius = '130px'
+        div1.style.backgroundImage = 'foda-se.png'
+
+
+    }
+    function up() {
+        var div1 = window.document.getElementById('div1')
+        div1.innerHTML = `Bom <br> trabalho!!`
+        div1.style.borderRadius = '500px'
+
+        div1.style.backgroundColor = 'Black'
+        div1.style.color = 'white'
+
+
+
+    }
+
+    function clicar(){
+        var div1 = window.document.getElementById('div1')
+        div1.innerHTML = `Clique com o botão direito!`
+        div1.style.borderRadius = '500px'
+        div1.style.backgroundColor = '#962B09'
+    }
+
+
+    function saiu() {
+        var div1 = window.document.getElementById('div1')
+        div1.innerHTML = `Saiu...`
+        div1.style.backgroundColor = '#520120'
+        div1.style.borderRadius = '150px'
+
+
+    }
+
+    // EVENTOS DOM
+    // onmouseenter ( Ação que acontecerá quando mouse estiver encima do elemento).
+    // onmousemove ( Enquanto o mouse estiver se movendo dentro do elemento ele vai disparar o evento  )
+    // onmousedown (quando voce precionar o mouse)
+    // onmouseup (quando eu soltar o botão do mouse)
+    // onclick ( quando eu clicar e soltar rapidamente )
+    // mouseout (quando eu tirar o mouse de cima do elemento)
+</script>
+</body>
+</html>

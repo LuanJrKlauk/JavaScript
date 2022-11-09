@@ -1,0 +1,13 @@
+var n = 0
+var limite = 1500
+
+ /*do {
+     console.log(`Passo número ${n}`)
+     n = n + 1
+
+ } while ( n <=500) */
+do {
+    console.log(`Seu limite é ${limite},00`)
+    limite = limite - 150
+}
+ while (limite <= 1500)

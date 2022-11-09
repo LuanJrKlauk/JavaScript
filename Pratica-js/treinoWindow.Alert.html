@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino Variaveis e window.alert</title>
+    <style>
+        @import
+        url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Black+Ops+One&family=Bungee+Shade&family=Gloria+Hallelujah&family=Henny+Penny&family=Lily+Script+One&family=Monoton&family=Press+Start+2P&family=Rye&family=Sacramento&family=Sansita+Swashed:wght@300;400;500;600;700;800;900&display=swap');
+        body {
+
+            font-family: 'Lily Script One', cursive;
+            background-color: rgba(34, 34, 34, 0.692);
+            align-items: center;
+
+
+
+
+        }
+
+
+        div {
+
+            background-color: rgba(0, 0, 0, 0.747);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+            background-image: url(javascript-minima.jpg);
+            font-size: 25px;
+            width: 350px;
+            height: 100px;
+            text-align: justify;
+            padding: 20px;
+            border: 2px solid rgba(0, 0, 0, 0.377);
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.541);
+            border-radius: 15px ;
+            text-align: center;
+            margin: 25px;
+
+            }
+            div:hover {
+                background-color: rgba(0, 0, 0, 0.747);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: center;
+                background-image: url(Hover.jpeg);
+                font-size: 25px;
+                width: 400px;
+                height: 130px;
+                text-align: justify;
+                padding: 20px;
+                border: 2px solid rgba(0, 0, 0, 0.377);
+                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.541);
+                border-radius: 15px ;
+                text-align: center;
+                margin: 25px;
+                transition: 0.5s;
+
+
+            }
+    </style>
+</head>
+<body>
+
+
+
+    <script>
+        var nome = window.prompt('Qual é seu nome?')
+        var idade = Number.parseFloat(window.prompt('Qual sua idade?'))
+        var salario = Number.parseFloat(window.prompt('Digite seu salario:'))
+        var n1 = Number.parseFloat(window.prompt('Olá, '  + nome +'. Digite um número:'))
+        var n2 = Number.parseFloat(window.prompt('Digite mais um número:'))
+        var soma = n1 + n2
+        var multiplica = n1 * n2
+        var menos = n1 - n2
+        var dividir = n1 / n2
+
+
+
+        document.write(`<center>
+            <div>
+                Olá ${nome}, você tem ${idade} anos , seja bem-vindo a meu site de teste em JavaScript!
+            </div>
+        </center>`)
+
+        document.write(`<center>
+            <div>
+                Seu nome em letras maiúsculas é ${nome.toUpperCase()}
+            </div>
+        </center>`)
+        document.write(`<center>
+            <div>
+                <p> Seu nome em letras minúsculas é ${nome.toLowerCase()}</p>
+            </div>
+        </center>`)
+        document.write(`<center>
+            <div>
+                Seu salário é  ${salario.toFixed(2)} <br>
+                </div>
+        </center>`)
+        document.write(`<center>
+            <div>
+                Seu Salário é  ${salario.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} <br>
+                </div>
+        </center>`)
+
+        document.write(`<center>
+            <div>
+                Seu Salário é  ${salario.toLocaleString('pt-br', {style: 'currency', currency: 'USD'})} <br>
+                </div>
+        </center>`)
+        document.write(`<center>
+            <div>
+                Seu Salário é  ${salario.toLocaleString('pt-br', {style: 'currency', currency: 'EUR'})} <br>
+                </div>
+        </center>`
+)
+        document.write(`<center>
+            <div>
+                O resultado de ${n1} + ${n2} é igual a: ${soma} <br>
+                </div>
+        </center>`)
+        document.write(`<center>
+            <div>
+                O resultado de ${n1} * ${n2} é igual a: ${multiplica} <br>
+                </div>
+        </center>`)
+        document.write(`<center>
+            <div>
+                O resultado de ${n1} - ${n2} é igual a: ${menos} <br>
+                </div>
+        </center>`)
+        document.write(`<center>
+            <div>
+                O resultado de ${n1} / ${n2} é igual a: ${dividir} <br>
+                </div>
+        </center>`)
+
+    </script>
+</body>
+</html>

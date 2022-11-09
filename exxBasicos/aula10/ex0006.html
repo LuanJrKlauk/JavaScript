@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        @import
+        url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gloria+Hallelujah&family=Henny+Penny&family=Monoton&family=Press+Start+2P&family=Rye&family=Sacramento&family=Sansita+Swashed:wght@300;400;500;600;700;800;900&display=swap');
+        div#area {
+
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid black;
+            box-shadow: 0px 5px 5px black;
+            font-size: 32px;
+     }
+     body {
+         font-family: 'Rye', cursive;
+
+     }
+    </style>
+</head>
+<body>
+
+    <div id="area" >
+        Interaja...
+    </div>
+
+<script>
+
+    var link = window.document.getElementById('link')
+    var a = window.document.getElementById('area')
+    a.addEventListener('click', clicar )
+    a.addEventListener('mouseenter', entrar)
+    a.addEventListener('mouseout', sair )
+
+link.href = 'https://www.facebook.com'
+
+    function clicar() {
+        a.innerText = 'Clicou!'
+        a.style.background = 'black'
+        a.style.color = 'white'
+        a.style.borderRadius = '500px'
+
+    }
+    function entrar() {
+        a.innerText = 'Entrou!'
+        a.style.background = 'yellow'
+        a.style.color = 'black'
+
+    }
+    function sair() {
+        a.innerText = 'Saiu!'
+        a.style.background = 'green'
+    }
+
+</script>
+</body>
+</html>

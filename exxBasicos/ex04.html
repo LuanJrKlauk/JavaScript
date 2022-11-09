@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex004</title>
+    <style>
+         @import
+         url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Black+Ops+One&family=Bungee+Shade&family=Gloria+Hallelujah&family=Henny+Penny&family=Monoton&family=Press+Start+2P&family=Rye&family=Sacramento&family=Sansita+Swashed:wght@300;400;500;600;700;800;900&display=swap');
+
+            body {
+                font-family: 'Rye', cursive;
+                background-color: rgba(79, 92, 67, 0.692);
+                font-size: 20px;
+                text-align: center;
+                
+            }
+            .p1 {
+                margin-top: 30px;
+
+            }
+            div {
+
+            }
+    </style>
+
+</head>
+<body>
+
+        <h1>Iniciando estudos com DOM</h1>
+        <p>Aqui vai o resultado</p>
+        <p>Aprendendo usar o <strong>DOM</strong> em JavaScript</p>
+             <div id="msg">Cloque em mim</div>
+
+            <div id="msg2">  Número 2 </div>
+            <div name="d3"> Número 3 </div>
+            <div class="d4"> Número 4</div>
+            <div id="d5"> Número 5 </div>
+
+
+
+    <script>
+        /*Você pode selecionar elementos das seguintes formas:
+        1- getElementsByTagName('Elemento selecionado') é usado para selecionar
+        um elemento do seu HTML pelo nome, acima selecionamos o elemento <p> em seguida
+            entre [] selecionamos o número do elemento, Primeiro paragráfo, usamos o número 0
+            lembrando que na programação começamos a contar pelo 0.
+
+
+
+        */
+
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0]
+        var p2 = window.document.getElementsByTagName('p')[1]
+
+        var d = window.document.getElementById('msg')
+        var d2 = window.document.getElementById('msg2')
+
+        var d3 = window.document.getElementsByName('d3')[0]
+
+        var d4 = window.document.getElementsByClassName('d4')[0]
+
+        var d5 = window.document.querySelector('div#d5')
+
+
+
+
+
+       document.write('Peguei o elemento do parágrafo 0 :'  +  p1.innerHTML)
+       // document.write()                  Escreve um documento em branco na tela
+       p2.style.backgroundColor = 'red'
+       /*p2.style.backgroundColor = 'red'   Usando DOM para mudar o padrão de fundo do
+       paragrafo 2
+       */
+      corpo.style.backgroundColor = 'blue'
+      window.document.write(window.document.URL)
+      d.style.background = 'green'
+      d.innerText = 'Bom dia' // Maneira simplificada
+
+      window.document.getElementById('msg2').innerHTML = '<p class="p1">Bom dia </p>' // Maneira completa
+
+      d2.style.width = '300px'
+      d2.style.height = '300px'
+      d2.style.background = 'black'
+      d2.style.color = 'rgb(177, 29, 132)'
+      d2.style.textAlign = 'center'
+      d2.style.marginTop = '30px'
+
+      d3.style.width = '300px'
+      d3.style.height = '300px'
+      d3.style.background = 'black'
+      d3.style.color = 'rgb(112, 111, 34)'
+      d3.style.textAlign = 'center'
+      d3.style.marginTop = '30px'
+
+      d4.style.width = '300px'
+      d4.style.height = '300px'
+      d4.style.background = 'rgb(177, 29, 132)'
+      d4.style.color = 'black'
+      d4.style.textAlign = 'center'
+      d4.style.marginTop = '30px'
+
+        d5.style.width = '300px'
+       d5.style.height = '300px'
+       d5.style.background = 'rgb(177, 29, 132)'
+       d5.style.color = 'black'
+       d5.style.textAlign = 'center'
+       d5.style.marginTop = '30px'
+
+
+
+
+      //TREINAR
+
+
+
+    </script>
+
+
+</body>
+</html>

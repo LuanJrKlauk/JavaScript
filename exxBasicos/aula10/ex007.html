@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números</title>
+    <style>
+        @import
+        url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Shade&family=Gloria+Hallelujah&family=Henny+Penny&family=Monoton&family=Press+Start+2P&family=Rye&family=Sacramento&family=Sansita+Swashed:wght@300;400;500;600;700;800;900&display=swap');
+         body {
+             text-align: center;
+             background-color: #706513ad;
+         }
+         :root {
+             --cor001: #520120;
+             --cor002: #08403E;
+             --cor003: #706513;
+             --cor004: #B57114;
+             --cor005: #962B09;
+
+         }
+         h1 {
+             font-family: 'Bungee Shade', cursive;
+
+         }
+        input.txtn1 {
+            margin: auto;
+            background-color: blue;
+            width: 25px;
+            height: 25px;
+            border-radius: 500px;
+            border: 2px solid black ;
+
+
+        }
+        input.txtn2 {
+              margin: auto;
+            background-color: blue;
+            width: 25px;
+            height: 25px;
+            border-radius: 500px;
+            border: 2px solid black ;
+
+
+        }
+        div {
+            margin: auto;
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+            background-color: #520120;
+        }
+        #res {
+            width: 150px;
+            height: 25px;
+            margin: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div>
+        <h1>Somando valores</h1>
+        <input type="number" name="txtn1" id="txtn1"><br>
+        <strong><h1>+</h1></strong><br>
+        <input type="number" name="txtn2" id="txtn2">
+        <input type="button" value="Somar" onclick="somar()">
+        <div id="res">Resultado</div>
+    </div>
+
+    <script>
+        function somar() {
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.getElementById('txtn2')
+            var res = window.document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+
+            res.innerText = `A Soma entre ${n1} e ${n2} é igual a  ${s}`
+        }
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinos JavaScript</title>
+</head>
+<style>
+    @import
+    url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Black+Ops+One&family=Bungee+Shade&family=Gloria+Hallelujah&family=Henny+Penny&family=Monoton&family=Press+Start+2P&family=Rye&family=Sacramento&family=Sansita+Swashed:wght@300;400;500;600;700;800;900&display=swap');
+    body  {
+        text-align: justify;
+        font-family: 'Bangers', cursive;;
+    }
+    div {
+        width: 450px;
+        border: 2px solid black;
+    }
+</style>
+<body>
+
+
+    <script>
+        var nome = window.prompt('Qual é seus nome?')
+
+        var n1 = Number.parseFloat(window.prompt(  'Olá '+ nome +' digite um número:')) // string
+
+        // Number.parseInt() Conversão de String para Number Obs: Somente numeros inteiros
+
+        // Number.parseFloat() Conversão de String para Number Obs: Numeros com pontos e virgulas
+
+        var n2 = Number.parseFloat(window.prompt('digite outro numero:')) // string
+        resultado = n1 + n2
+
+        window.alert('A soma dos resultados é ' + resultado) // Sinal de "+" unico= concatenção
+        // number + number = soma
+        // string + string = concateção
+
+    </script>
+
+</body>
+</html>

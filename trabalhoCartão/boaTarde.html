@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão hora</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Courgette&display=swap');
+
+        :root {
+            --cor001: #16232E;
+            --cor001: #164C45;
+            --cor001: #CC8D1A;
+            --cor001: #E3C75F;
+            --cor001: #BDA523;
+
+        }
+
+        body {
+
+            text-align: center;
+            border-radius: 25px;
+            background-color: #4afae2;
+
+
+        }
+
+        section {
+            background-color: #92801c;
+            color: black;
+
+            padding: 25px;
+            max-width: 550px;
+            min-width: 350px;
+            margin: auto;
+            margin-top: 50px;
+            box-shadow: 1px 5px 5px black;
+
+
+        }
+
+
+        #msg {
+            font-size: 50px;
+
+        }
+
+        #relogio {
+
+
+            height: 100px;
+            width: 270px;
+            display: flex;
+            color: white;
+            margin: auto;
+            font-family: 'Alumni Sans Inline One', cursive;
+
+
+        }
+
+        #hora {
+            height: 80px;
+            width: 80px;
+            margin: 5px;
+            font-size: 65px;
+            text-shadow: 1px 3px 3px black;
+
+
+
+
+        }
+
+        #minuto {
+            height: 80px;
+            width: 80px;
+            margin: 5px;
+            font-size: 65px;
+            text-shadow: 1px 3px 3px black;
+        }
+
+        #segundo {
+            height: 80px;
+            width: 80px;
+            margin: 5px;
+            font-size: 65px;
+            text-shadow: 1px 3px 3px black;
+
+        }
+
+        #img {
+            width: 350px;
+            height: 350px;
+            border-radius: 500px;
+            margin-top: 25px;
+            background-image: url(noite.jpg);
+            background-size: cover;
+            background-color: #B4BF5E;
+            box-shadow: 0px 3px 3px black;
+            margin: auto;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <h1 id="msg"></h1>
+        <div id="relogio">
+            <div id="hora">
+
+            </div>
+
+            <div id="minuto">
+
+            </div>
+
+            <div id="segundo">
+
+            </div>
+        </div>
+        <div id="img">
+
+        </div>
+    </section>
+
+
+    <script>
+        var hora = window.document.getElementById('hora')
+        var minuto = window.document.getElementById('minuto')
+        var segundo = window.document.getElementById('segundo')
+        var imagem = window.document.getElementById('img')
+        var mensagem = window.document.getElementById('msg')
+
+        atualizarTela()
+
+        setInterval(() => {
+            atualizarTela()
+        }, 1000);
+
+
+        function atualizarTela() {
+            var agora = new Date()
+            var horas = agora.getHours()
+            var minutos = agora.getMinutes()
+            var segundos = agora.getSeconds()
+
+
+            mostrarMensagem(horas)
+            mostrarHora(horas)
+            mostrarMinutos(minutos)
+            mostrarSegundos(segundos)
+            mostrarImagem(horas)
+
+        }
+
+        function mostrarMensagem(horas) {
+
+            if (horas >= 0 && horas <= 4) {
+                mensagem.innerHTML = `Boa Madrugada`
+            } else if (horas >= 5 && horas <= 11) {
+                mensagem.innerHTML = `Bom-dia`
+            } else if (horas >= 12 && horas <= 17) {
+                mensagem.innerHTML = `Boa-Tarde`
+            } else {
+                mensagem.innerHTML = `Boa-noite`
+
+            }
+
+        }
+
+        function mostrarHora(horas) {
+
+            if (horas <= 9) {
+                hora.innerHTML = 0 + `${horas} :`
+            } else {
+                hora.innerHTML = `${horas} :`
+            }
+
+
+        }
+
+        function mostrarMinutos(minutos) {
+
+            if (minutos <= 9) {
+                minuto.innerHTML = 0 + `${minutos} :`
+            } else {
+                minuto.innerHTML = `${minutos} :`
+            }
+
+
+        }
+
+        function mostrarSegundos(segundos) {
+
+            if (segundos <= 9) {
+                segundo.innerHTML = 0 + `${segundos}`
+            } else {
+                segundo.innerHTML = `${segundos}`
+            }
+
+        }
+
+        function mostrarImagem(horas) {
+            if (horas >= 0 && horas <= 4) {
+                imagem.style.backgroundImage = "url('noite.jpeg')"
+            } else if (horas >= 5 && horas <= 11) {
+                imagem.style.backgroundImage = "url('tarde.jpg')"
+            } else if (horas >= 12 && horas <= 17) {
+                imagem.style.backgroundImage = "url('tarde.jpg')"
+
+            } else {
+                imagem.style.backgroundImage = "url('noite.jpeg')"
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
